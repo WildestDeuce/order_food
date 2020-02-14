@@ -9,7 +9,7 @@ const port = process.env.PORT || 3200;
 //middleware
 
 app.use(bodyparser.json());
-app.use(bodyparser.urlenconded({ extended:false }));
+app.use(bodyparser.urlencoded({ extended:false }));
 
 app.listen(port, () => {
   console.log(`running at port ${port}`)
