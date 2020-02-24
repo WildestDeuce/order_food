@@ -6,7 +6,7 @@ const app = express();
 
 const port = process.env.PORT || 3200;
 
-const orders = [{food_name:'chicken pot pie', customer_name:'Charles', food_qty:'2'}];
+const orders = [];
 
 //middleware
 
@@ -22,10 +22,10 @@ app.get('/get_orders', (req, res) => {
 app.post('/new_order', (req, res) => {
  const order = req.body;
 
- if (order.food_name && order.customer_name && order.food_qty) {
+ if (order.id && order.food_name && order.customer_name && order.food_qty) {
    orders.push({
      ...order,
-     id: `${orders.lenght + 1}`,
+     id: `${orders.length + 1}`,
      date: Date.now().toString()
    });
 
